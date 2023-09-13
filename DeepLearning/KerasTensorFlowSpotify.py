@@ -17,8 +17,8 @@ from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense
 import tensorflow as tf
-from keras.utils.np_utils import to_categorical
-
+from tensorflow.python.keras.utils import np_utils
+from tensorflow.keras.utils import to_categorical
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -370,11 +370,11 @@ def p_3(): #expect 85,86,87
     #spotify = pd.read_csv (r'')
     #print (spotify)
     
-    from google.colab import files
+    #from google.colab import files
     
-    uploaded = files.upload()
+    #uploaded = files.upload()
 
-    spotify = pd.read_csv(uploaded['spotify_preprocessed.csv'])
+    spotify = pd.read_csv('DeepLearning\Data\spotify_preprocessed.csv')
 
     print(spotify)
     x_train, x_test = train_test_split(spotify, test_size=0.10, shuffle=True)
