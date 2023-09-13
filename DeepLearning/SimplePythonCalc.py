@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Introduction to Deep Learning – CAP 4613
+Introduction to Deep Learning
 Assignment 1
 Due: Sunday, Jan 23 before 11:59 pm
-
-Name: Kevin Tudor z-number:Z23468207
 
 Spyder (Python 3.8) IDE
 
@@ -331,27 +329,5 @@ def classifier():
     plot(C1, C2)
         
 
-
-
-
-
-
-
-
-#calculator()
+calculator()
 classifier()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
