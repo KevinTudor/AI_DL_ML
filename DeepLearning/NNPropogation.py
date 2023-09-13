@@ -4,8 +4,6 @@ Introduction to Deep Learning – CAP 4613
 Assignment 3
 Due: Sunday, February 20 before 11:59 pm
 
-Name: Kevin Tudor z-number:Z23468207
-
 Spyder (Python 3.8) IDE
 
 link to final version in Colab:

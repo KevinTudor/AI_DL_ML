@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Introduction to Deep Learning – CAP 4613
+Introduction to Deep Learning
 Assignment 2
 Due: Sunday, February 6 before 11:59 pm
 
@@ -18,7 +18,7 @@ url = 'https://colab.research.google.com/drive/1tC6UXuBWwDlW4Nn4wau1J4QYSX1O02qI
 webbrowser.open(url)  # Go to the google colab
 
 """
-Problem 3) 
+Problem 1) 
     
 MNIST dataset - The MNIST dataset is divided into two sets - training and test. Each
 set comprises a series of images (28 x 28-pixel images of handwritten digits) and their

@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Introduction to Deep Learning – CAP 4613
+Introduction to Deep Learning
 Assignment 5
 Problem 1-3
 Due: Sunday, April 3 before 11:59 pm
-Name: Kevin Tudor z-number:Z23468207
 
 Spyder (Python 3.8) IDE
 
@@ -382,8 +381,8 @@ def p_3(): #expect 85,86,87
     
 
 def main():
-    #p_1()
-    #p_2(1, 10, 0)
+    p_1()
+    p_2(1, 10, 0)
     #p_2(1, 50, 0)
     #p_2(1, 100, 0)
     #p_2(2, 100, 10)

@@ -4,7 +4,6 @@ Introduction to Deep Learning – CAP 4613
 Assignment 4
 Problem 2
 Due: Sunday, March 20 before 11:59 pm
-Name: Kevin Tudor z-number:Z23468207
 
 Spyder (Python 3.8) IDE
 
@@ -257,8 +256,8 @@ def main():
     
     #part b.iii) Create the network with one neuron using the class NeuralNetwork() 
     # with learning rate of 1 then train it using train(inputs, labels, 50) function.
-    L1 = NeuralNetwork(test_data_b[0].size, 1)
-    L1.train(test_data_b, test_label, 50)
+    L1 = NeuralNetwork(test_data_b[0].size, 0.05)
+    L1.train(test_data_b, test_label, 100)
     
     #plot the data and classifier based on the trained weights
     L1.plot_fun_thr(test_data_b, test_label, L1.weight_matrix, classes)
@@ -278,7 +277,7 @@ def main():
     changes to the point it gets higher with each epoch. At learning rate of "0.5"  the
     curve is able to reache a low cost quite fast however it does so by drastically
     dropping immediately. Upon lowering the learning curve to "0.05" the curve smoothes
-    out and the learning curve undergoes less drastic changes. For this data set i believe 
+    out and the learning curve undergoes less drastic changes. For this data set I believe 
     having a learning curve of "0.05" is the best.
     """
 
