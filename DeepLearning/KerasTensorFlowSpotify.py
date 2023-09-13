@@ -363,22 +363,85 @@ classify songs from Spotify dataset.
 def p_3(): #expect 85,86,87
     import sklearn
     from sklearn.model_selection import train_test_split
-    
+    from tensorflow.keras.optimizers import Adam
     import pandas as pd
 
-    #spotify = pd.read_csv (r'')
-    #print (spotify)
-    
-    #from google.colab import files
-    
-    #uploaded = files.upload()
+    data = pd.read_csv('DeepLearning\Data\spotify_preprocessed.csv')
+    data = np.array(data)
+    #print(data.shape[0])
 
-    spotify = pd.read_csv('DeepLearning\Data\spotify_preprocessed.csv')
+    """
+    b) Shuffle the data then split it into training (90% of the data) and
+    test
+    set (10% of the data). Split the training set further into training and
+    validation sets with 80% and 20% percentages respectively.
+    """
+    x = data[:, 0:15]
+    y = data[:, 15]
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.10,
+    shuffle=True)
+    x_train, x_valid, y_train, y_valid = train_test_split(x_train, y_train,
+    test_size=0.20, shuffle=True)
+    #print(x_train.shape, x_valid.shape, x_test.shape)
 
-    print(spotify)
-    x_train, x_test = train_test_split(spotify, test_size=0.10, shuffle=True)
+    """
+    c) Build, compile, train, and then evaluate:
+    part i)
+    Build a neural network with 2 hidden layers that contain 32 nodes each
+    and an output layer that has 1 unit using the Keras library.
+    """
+    classes = [0,1]
+    model_a=Sequential()
+    model_a.add(Dense(input_dim=15, units=64, activation='relu'))
+    model_a.add(Dense(units=32, activation='relu'))
+    model_a.add(Dense(units=32, activation='relu'))
+    model_a.add(Dense(units=32, activation='relu'))
+    model_a.add(Dense(units=1, activation='sigmoid')) #units 2?
 
-    
+    """
+    part ii)
+    Compile the network. Select binary cross-entropy (binary_crossentropy)
+    as the loss function. Use stochastic gradient descent learning (SGD,
+    learning
+    rate of 0.01).
+    """
+
+    opt = tf.keras.optimizers.SGD(learning_rate=0.1, momentum=0.9)
+    model_a.compile(loss='binary_crossentropy',
+    optimizer='adam',
+    metrics=['accuracy'])
+
+    """
+    part iii)
+    Train the network for 50 epochs and a batch size of 16.
+    """
+    history=model_a.fit(x_train, y_train,
+    batch_size=128,
+    epochs=200,
+    verbose=0) #1 or 0 (Show each Epoch toggle)
+
+    """
+    part iv.
+    Plot the training loss and validation loss (i.e., the learning curve)
+    for all the epochs.
+    """
+    plt.figure(figsize=[9,5])
+    acc_curve=np.array(history.history['accuracy'])
+    loss_curve=np.array(history.history['loss'])
+    plot_curve(acc_curve,loss_curve)
+
+    """
+    part v.
+    Use the evaluate() Keras function to find the training and validation
+    loss and accuracy.
+    """
+    score=model_a.evaluate(x_train,y_train)
+    print('Total loss on training set: ', score[0])
+    print('Accuracy of training set: ', score[1])
+    score=model_a.evaluate(x_valid,y_valid)
+    print('Total loss on validation set: ', score[0])
+    print('Accuracy of validation set: ', score[1])
+
 
 def main():
     p_1()
