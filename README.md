@@ -1,7 +1,6 @@
-# AI_DL_ML
-Artificial Intelligence, Deep Learning, and Machine Learning projects
+# Artificial Intelligence, Deep Learning, and Machine Learning projects
 
-## Deep Learning
+## [Deep Learning](DeepLearning)
 
 ### Technology
 
@@ -35,6 +34,6 @@ Artificial Intelligence, Deep Learning, and Machine Learning projects
 - In Python, implement a simple calculator that does the following operations: summation, subtraction, multiplication, division, mod, power, exp, natural log, and abs. 
 
 
-## Machine Learning
+## [Machine Learning](MachineLearning)
 
 
